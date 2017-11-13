@@ -11,14 +11,14 @@ namespace TicTakToeKata
         {
             var board = new List<string>();
             board.Add("o");
-            board.Add(null);
-            board.Add(null);
-            board.Add(null);
-            board.Add(null);
-            board.Add(null);
-            board.Add(null);
-            board.Add(null);
-            board.Add(null);
+            board.Add(" ");
+            board.Add(" ");
+            board.Add(" ");
+            board.Add(" ");
+            board.Add(" ");
+            board.Add(" ");
+            board.Add(" ");
+            board.Add(" ");
 
             var solver = new Solver();
 
