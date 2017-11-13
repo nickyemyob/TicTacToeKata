@@ -21,7 +21,7 @@ namespace TicTakToeKata
 
             var solver = new Solver();
 
-            var result = solver.Solve();
+            var result = solver.Solve(board);
 
             Assert.AreEqual(2, result);
         }
