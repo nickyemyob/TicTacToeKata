@@ -4,8 +4,9 @@ using NUnit.Framework;
 namespace TicTakToeKata
 {
     [TestFixture]
-    public class TicTakToeShould
+    public class SolverShould
     {
+        [Test]
         public void MakeAMoveOnTheBoardAfterTheUser()
         {
             var board = new List<string>();
