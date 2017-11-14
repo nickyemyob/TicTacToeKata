@@ -9,18 +9,15 @@ namespace TicTakToeKata
         [Test]
         public void RenderTheBoardOfCurrentStateToTheConsole()
         {
-            var board = new List<string>();
-            board.Add("o");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
 
-            string expectedBoardVisualisation = "[o][ ][ ]" + "\n" +
+            var board = new List<string>
+            {
+                " ", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            string expectedBoardVisualisation = "[ ][ ][ ]" + "\n" +
                                                 "[ ][ ][ ]" + "\n" +
                                                 "[ ][ ][ ]";
 
