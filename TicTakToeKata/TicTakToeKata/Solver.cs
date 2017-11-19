@@ -4,7 +4,7 @@ namespace TicTakToeKata
 {
     internal class Solver
     {
-        public int MakeAMove(List<string> board)
+        public static int solver(List<string> board)
         {
             var movePosition = 0;
             foreach (var token in board)
@@ -18,6 +18,17 @@ namespace TicTakToeKata
             }
 
             return movePosition;
+        }
+
+        public static void UsersMove(List<string> board, int usersMove)
+        {
+            board[usersMove] = "o";
+        }
+
+        public static void AIsMove(List<string> board)
+        {
+            var aiMove = solver(board);
+            board[aiMove] = "x";
         }
     }
 }

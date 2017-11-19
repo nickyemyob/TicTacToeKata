@@ -14,16 +14,15 @@ namespace TicTakToeKata
 
             Console.WriteLine("Please enter a number:");
 
-            var UsersMove = Console.ReadLine();
+            var usersMove = Convert.ToInt32(Console.ReadLine());
 
+            Solver.UsersMove(board, usersMove);
 
+            Console.WriteLine("player (o) at " + usersMove);
 
-            Console.WriteLine("player (o) at " + UsersMove);
+            Solver.AIsMove(board);
 
-            var computer = new Solver();
-            var computerMove = computer.MakeAMove(board);
-
-            Console.WriteLine("Computer (x) moves at " + computerMove);
+            Console.WriteLine("Computer (x) moves at ");
 
             Console.WriteLine(renderer.Render(board));
 
