@@ -7,24 +7,20 @@ namespace TicTakToeKata
     public class SolverShould
     {
         [Test]
-        public void MakeAMoveOnTheBoardAfterTheUser()
+        public void MakeAValidMoveOnTheBoardAfterTheUser()
         {
-            var board = new List<string>();
-            board.Add("o");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
-            board.Add(" ");
+            var board = new List<string>
+            {
+                "o", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
 
             var solver = new Solver();
 
-            var result = solver.Solve(board);
+            var result = solver.MakeAMove(board);
 
-            Assert.AreEqual(2, result);
+            Assert.AreEqual(1, result);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace TicTakToeKata
 {
@@ -13,7 +12,24 @@ namespace TicTakToeKata
             var renderer = new Renderer();
             Console.WriteLine(renderer.Render(board));
 
+            Console.WriteLine("Please enter a number:");
+
+            var UsersMove = Console.ReadLine();
+
+
+
+            Console.WriteLine("player (o) at " + UsersMove);
+
+            var computer = new Solver();
+            var computerMove = computer.MakeAMove(board);
+
+            Console.WriteLine("Computer (x) moves at " + computerMove);
+
+            Console.WriteLine(renderer.Render(board));
+
             Console.ReadLine();
+
+
         }
     }
 }

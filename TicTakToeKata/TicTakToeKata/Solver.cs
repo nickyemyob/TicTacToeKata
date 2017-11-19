@@ -4,9 +4,20 @@ namespace TicTakToeKata
 {
     internal class Solver
     {
-        public int Solve(List<string> board)
+        public int MakeAMove(List<string> board)
         {
-            return 2;
+            var movePosition = 0;
+            foreach (var token in board)
+            {
+                if (string.IsNullOrWhiteSpace(token))
+                {
+                    break;
+                }
+
+                movePosition++;
+            }
+
+            return movePosition;
         }
     }
 }
