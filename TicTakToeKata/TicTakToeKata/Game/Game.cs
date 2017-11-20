@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Game
 {
     internal class Game
     {
@@ -19,7 +20,8 @@ namespace TicTakToeKata
 
         public static bool Input(string userInput)
         {
-            return int.TryParse(userInput, out var _);
+            return int.TryParse(userInput, out var _) &&
+                   (Convert.ToInt32(userInput) < 9 && Convert.ToInt32(userInput) > -1);
         }
     }
 }

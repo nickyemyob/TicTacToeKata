@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Solver
 {
     internal class Solver
     {
-        public static int solver(List<string> board)
+        public static int AiSolver(List<string> board)
         {
             var movePosition = 0;
             foreach (var token in board)
@@ -27,7 +27,7 @@ namespace TicTakToeKata
 
         public static void AIsMove(List<string> board)
         {
-            var aiMove = solver(board);
+            var aiMove = AiSolver(board);
             board[aiMove] = "x";
         }
     }

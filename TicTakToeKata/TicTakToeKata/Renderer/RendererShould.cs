@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Renderer
 {
     [TestFixture]
     public class RendererShould

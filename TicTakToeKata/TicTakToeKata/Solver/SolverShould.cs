@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Solver
 {
     [TestFixture]
     public class SolverShould
     {
-        public void AIDeterminesAValidMove()
+        public void AiDeterminesAValidMove()
         {
             var board = new List<string>
             {
@@ -15,7 +15,7 @@ namespace TicTakToeKata
                 " ", " ", " "
             };
 
-            var result = Solver.solver(board);
+            var result = Solver.AiSolver(board);
 
             Assert.AreEqual(1, result);
 
@@ -44,7 +44,7 @@ namespace TicTakToeKata
             Assert.AreEqual(expectedBoard, board);
         }
 
-        public void AIMakesAValidMove()
+        public void AiMakesAValidMove()
         {
             var board = new List<string>
             {
@@ -59,8 +59,6 @@ namespace TicTakToeKata
                 " ", " ", " ",
                 " ", " ", " "
             };
-
-            var AIMove = 0;
 
             Solver.AIsMove(board);
 
