@@ -21,6 +21,49 @@ namespace TicTakToeKata
 
             Assert.AreEqual(expectedBoard, actualBoard);
         }
-        
+
+        private static readonly object[] IncorrectUserInputScenarios =
+        {
+            new object[] { "a" },
+            new object[] { "" },
+            new object[] { " " },
+            new object[] { "-1" },
+            new object[] { "9" }
+
+
+        };
+
+        [TestCaseSource(nameof(IncorrectUserInputScenarios))]
+        [Test]
+        public void InformTheUserOfInvalidInput(string input)
+        {
+            var userInput = input;
+            bool checkInput = Game.Input(userInput);
+
+            Assert.False(checkInput);
+            
+        }
+
+        private static readonly object[] CorrectUserInputScenarios =
+        {
+            new object[] { "0" },
+            new object[] { "8" },
+            new object[] { "4" }
+
+
+        };
+
+        [TestCaseSource(nameof(CorrectUserInputScenarios))]
+        [Test]
+        public void AccecptsUserInputIfValid(string input)
+        {
+            var userInput = input;
+            bool checkInput = Game.Input(userInput);
+
+            Assert.True(checkInput);
+
+        }
+
+
     }
 }

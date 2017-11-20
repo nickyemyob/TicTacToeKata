@@ -12,13 +12,22 @@ namespace TicTakToeKata
             var renderer = new Renderer();
             Console.WriteLine(renderer.Render(board));
 
-            Console.WriteLine("Please enter a number:");
+            Console.WriteLine("To make a move, please enter a number from 0-8");
 
-            var usersMove = Convert.ToInt32(Console.ReadLine());
+            var userInput = Console.ReadLine();
 
-            Solver.UsersMove(board, usersMove);
+            while (!Game.Input(userInput))
+            {
+                Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
+                userInput = Console.ReadLine();
 
-            Console.WriteLine("player (o) at " + usersMove);
+            }
+
+            var userMove = Convert.ToInt32(userInput);
+
+            Solver.UsersMove(board, userMove);
+
+            Console.WriteLine("player (o) at " + userInput);
 
             Solver.AIsMove(board);
 

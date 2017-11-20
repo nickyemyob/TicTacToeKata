@@ -16,5 +16,10 @@ namespace TicTakToeKata
             return board;
 
         }
+
+        public static bool Input(string userInput)
+        {
+            return int.TryParse(userInput, out var _);
+        }
     }
 }
