@@ -37,8 +37,9 @@ namespace TicTakToeKata.Game
         [Test]
         public void InformTheUserOfInvalidInput(string input)
         {
+            var game = new Game();
             var userInput = input;
-            bool checkInput = Game.Input(userInput);
+            bool checkInput = game.Input(userInput);
 
             Assert.False(checkInput);
             
@@ -57,8 +58,9 @@ namespace TicTakToeKata.Game
         [Test]
         public void AccecptsUserInputIfValid(string input)
         {
+            var game = new Game();
             var userInput = input;
-            bool checkInput = Game.Input(userInput);
+            bool checkInput = game.Input(userInput);
 
             Assert.True(checkInput);
 
@@ -67,6 +69,7 @@ namespace TicTakToeKata.Game
         [Test]
         public void FinishWhenThereAreNoMoreMoves()
         {
+            var game = new Game();
             var expectedBoard = new List<string>
             {
                 "x", "o", "x",
@@ -74,7 +77,7 @@ namespace TicTakToeKata.Game
                 "o", "x", "o"
             };
 
-            var gameIsFinished = Game.IsFinished(expectedBoard);
+            var gameIsFinished = game.IsFinished(expectedBoard);
 
             Assert.True(gameIsFinished);
         }
@@ -82,6 +85,7 @@ namespace TicTakToeKata.Game
         [Test]
         public void NotFinishWhenThereAreNoMoreMoves()
         {
+            var game = new Game();
             var expectedBoard = new List<string>
             {
                 "x", "o", "x",
@@ -89,7 +93,7 @@ namespace TicTakToeKata.Game
                 "o", "x", " "
             };
 
-            var gameIsFinished = Game.IsFinished(expectedBoard);
+            var gameIsFinished = game.IsFinished(expectedBoard);
 
             Assert.False(gameIsFinished);
         }

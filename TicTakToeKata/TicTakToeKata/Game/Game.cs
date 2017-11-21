@@ -18,13 +18,13 @@ namespace TicTakToeKata.Game
 
         }
 
-        public static bool Input(string userInput)
+        public bool Input(string userInput)
         {
             return int.TryParse(userInput, out var _) &&
                    (Convert.ToInt32(userInput) < 9 && Convert.ToInt32(userInput) > -1);
         }
 
-        public static bool IsFinished(List<string> board)
+        public bool IsFinished(List<string> board)
         {
             foreach (var token in board)
             {

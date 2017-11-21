@@ -15,7 +15,7 @@ namespace TicTakToeKata
 
             var userInput = Console.ReadLine();
 
-            while (!Game.Game.Input(userInput))
+            while (!game.Input(userInput))
             {
                 Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
                 userInput = Console.ReadLine();
