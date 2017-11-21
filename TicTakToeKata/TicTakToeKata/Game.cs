@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TicTakToeKata.Game
+namespace TicTakToeKata
 {
     internal class Game
     {

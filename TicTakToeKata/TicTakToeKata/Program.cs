@@ -6,7 +6,7 @@ namespace TicTakToeKata
     {
         static void Main()
         {
-            var game = new Game.Game();
+            var game = new Game();
             var board = game.NewBoard();
 
             Console.WriteLine(Renderer.Render(board));

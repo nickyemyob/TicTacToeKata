@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TicTakToeKata.Game
+namespace TicTakToeKata.Test
 {
     [TestFixture]
     public class GameShould
