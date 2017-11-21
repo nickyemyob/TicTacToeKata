@@ -4,10 +4,10 @@ using NUnit.Framework;
 namespace TicTakToeKata.Solver
 {
     [TestFixture]
-    public class SolverShould
+    public class ComputerPlayerShould
     {
         [Test]
-        public void AiDeterminesAValidMove()
+        public void DetermineAValidMove()
         {
             var board = new List<string>
             {
@@ -16,7 +16,7 @@ namespace TicTakToeKata.Solver
                 " ", " ", " "
             };
 
-            var result = Solver.AiSolver(board);
+            var result = ComputerPlayer.Solve(board);
 
             Assert.AreEqual(1, result);
 

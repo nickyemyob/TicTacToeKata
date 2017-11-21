@@ -43,7 +43,7 @@ namespace TicTakToeKata
 
         public void AIsMove(List<string> board)
         {
-            var aiMove = Solver.Solver.AiSolver(board);
+            var aiMove = Solver.ComputerPlayer.Solve(board);
             board[aiMove] = "x";
         }
     }

@@ -2,9 +2,9 @@
 
 namespace TicTakToeKata.Solver
 {
-    internal class Solver
+    internal class ComputerPlayer
     {
-        public static int AiSolver(List<string> board)
+        public static int Solve(List<string> board)
         {
             var movePosition = 0;
             foreach (var token in board)
