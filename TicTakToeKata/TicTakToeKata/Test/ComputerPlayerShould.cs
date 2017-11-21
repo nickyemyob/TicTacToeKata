@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TicTakToeKata.Solver
+namespace TicTakToeKata.Test
 {
     [TestFixture]
     public class ComputerPlayerShould

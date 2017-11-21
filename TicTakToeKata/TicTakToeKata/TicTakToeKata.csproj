@@ -51,8 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="Test\RendererShould.cs" />
-    <Compile Include="Solver\ComputerPlayer.cs" />
-    <Compile Include="Solver\ComputerPlayerShould.cs" />
+    <Compile Include="ComputerPlayer.cs" />
+    <Compile Include="Test\ComputerPlayerShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
