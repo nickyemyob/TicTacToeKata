@@ -64,6 +64,36 @@ namespace TicTakToeKata.Game
 
         }
 
+        [Test]
+        public void KnowWhenGameHasFinished()
+        {
+            var expectedBoard = new List<string>
+            {
+                "x", "o", "x",
+                "x", "o", "x",
+                "o", "x", "o"
+            };
+
+            var gameIsFinished = Game.IsFinished(expectedBoard);
+
+            Assert.True(gameIsFinished);
+        }
+
+        [Test]
+        public void KnowWhenGameHasNotFinished()
+        {
+            var expectedBoard = new List<string>
+            {
+                "x", "o", "x",
+                "x", "o", "x",
+                "o", "x", " "
+            };
+
+            var gameIsFinished = Game.IsFinished(expectedBoard);
+
+            Assert.False(gameIsFinished);
+        }
+
 
     }
 }

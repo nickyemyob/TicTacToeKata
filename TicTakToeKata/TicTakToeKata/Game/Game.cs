@@ -23,5 +23,17 @@ namespace TicTakToeKata.Game
             return int.TryParse(userInput, out var _) &&
                    (Convert.ToInt32(userInput) < 9 && Convert.ToInt32(userInput) > -1);
         }
+
+        public static bool IsFinished(List<string> board)
+        {
+            foreach (var token in board)
+            {
+                if (string.IsNullOrWhiteSpace(token))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }
