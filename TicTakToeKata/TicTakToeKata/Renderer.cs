@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 
-namespace TicTakToeKata.Renderer
+namespace TicTakToeKata
 {
-    internal class Renderer
+    public class Renderer
     {
-        public string Render(List<string> board)
+
+        public static string Render(List<string> board)
         {
             string boardVisualisation = "";
             var count = 0;

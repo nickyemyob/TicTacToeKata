@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TicTakToeKata.Renderer
+namespace TicTakToeKata.Test
 {
     [TestFixture]
     public class RendererShould
@@ -21,8 +21,7 @@ namespace TicTakToeKata.Renderer
                                                 "[ ][ ][ ]" + "\n" +
                                                 "[ ][ ][ ]";
 
-            var renderer = new Renderer();
-            var actualBoardVisualisation = renderer.Render(board);
+            var actualBoardVisualisation = Renderer.Render(board);
 
             Assert.AreEqual(expectedBoardVisualisation,actualBoardVisualisation);
 

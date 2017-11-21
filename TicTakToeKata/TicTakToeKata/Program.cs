@@ -9,8 +9,7 @@ namespace TicTakToeKata
             var game = new Game.Game();
             var board = game.NewBoard();
 
-            var renderer = new Renderer.Renderer();
-            Console.WriteLine(renderer.Render(board));
+            Console.WriteLine(Renderer.Render(board));
 
             Console.WriteLine("To make a move, please enter a number from 0-8");
 
@@ -33,7 +32,7 @@ namespace TicTakToeKata
 
             Console.WriteLine("Computer (x) moves at ");
 
-            Console.WriteLine(renderer.Render(board));
+            Console.WriteLine(Renderer.Render(board));
 
             Console.ReadLine();
 
