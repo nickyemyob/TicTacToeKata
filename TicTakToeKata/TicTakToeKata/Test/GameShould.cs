@@ -98,5 +98,53 @@ namespace TicTakToeKata.Test
             Assert.False(gameIsFinished);
         }
 
+        [Test]
+        public void UserMakesAValidMove()
+        {
+            var game = new Game();
+            var board = new List<string>
+            {
+                " ", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var expectedBoard = new List<string>
+            {
+                "o", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var usersMove = 0;
+
+            game.UsersMove(board, usersMove);
+
+            Assert.AreEqual(expectedBoard, board);
+        }
+
+        [Test]
+        public void AiMakesAValidMove()
+        {
+            var game = new Game();
+            var board = new List<string>
+            {
+                "o", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var expectedBoard = new List<string>
+            {
+                "o", "x", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            game.AIsMove(board);
+
+            Assert.AreEqual(expectedBoard, board);
+        }
+
     }
 }

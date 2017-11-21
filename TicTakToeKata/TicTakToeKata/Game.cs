@@ -20,7 +20,7 @@ namespace TicTakToeKata
 
         public bool Input(string userInput)
         {
-            return int.TryParse(userInput, out var _) &&
+            return Int32.TryParse(userInput, out var _) &&
                    (Convert.ToInt32(userInput) < 9 && Convert.ToInt32(userInput) > -1);
         }
 
@@ -28,12 +28,23 @@ namespace TicTakToeKata
         {
             foreach (var token in board)
             {
-                if (string.IsNullOrWhiteSpace(token))
+                if (String.IsNullOrWhiteSpace(token))
                 {
                     return false;
                 }
             }
             return true;
+        }
+
+        public void UsersMove(List<string> board, int usersMove)
+        {
+            board[usersMove] = "o";
+        }
+
+        public void AIsMove(List<string> board)
+        {
+            var aiMove = Solver.Solver.AiSolver(board);
+            board[aiMove] = "x";
         }
     }
 }

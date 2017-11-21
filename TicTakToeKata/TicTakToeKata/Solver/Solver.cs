@@ -19,16 +19,5 @@ namespace TicTakToeKata.Solver
 
             return movePosition;
         }
-
-        public static void UsersMove(List<string> board, int usersMove)
-        {
-            board[usersMove] = "o";
-        }
-
-        public static void AIsMove(List<string> board)
-        {
-            var aiMove = AiSolver(board);
-            board[aiMove] = "x";
-        }
     }
 }

@@ -22,50 +22,6 @@ namespace TicTakToeKata.Solver
 
         }
 
-        [Test]
-        public void UserMakesAValidMove()
-        {
-            var board = new List<string>
-            {
-                " ", " ", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
 
-            var expectedBoard = new List<string>
-            {
-                "o", " ", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
-
-            var usersMove = 0;
-
-            Solver.UsersMove(board, usersMove);
-
-            Assert.AreEqual(expectedBoard, board);
-        }
-
-        [Test]
-        public void AiMakesAValidMove()
-        {
-            var board = new List<string>
-            {
-                "o", " ", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
-
-            var expectedBoard = new List<string>
-            {
-                "o", "x", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
-
-            Solver.AIsMove(board);
-
-            Assert.AreEqual(expectedBoard, board);
-        }
     }
 }

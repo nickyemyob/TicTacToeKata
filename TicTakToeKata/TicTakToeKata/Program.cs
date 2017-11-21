@@ -24,11 +24,11 @@ namespace TicTakToeKata
 
             var userMove = Convert.ToInt32(userInput);
 
-            Solver.Solver.UsersMove(board, userMove);
+            game.UsersMove(board, userMove);
 
             Console.WriteLine("player (o) at " + userInput);
 
-            Solver.Solver.AIsMove(board);
+            game.AIsMove(board);
 
             Console.WriteLine("Computer (x) moves at ");
 
