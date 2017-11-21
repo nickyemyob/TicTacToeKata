@@ -50,6 +50,11 @@ namespace TicTakToeKata
 
         public bool CheckWinCondition(List<string> board)
         {
+            return CheckHorizontalWinCondition(board);
+        }
+
+        private bool CheckHorizontalWinCondition(List<string> board)
+        {
             List<string> row = new List<string>();
 
             var counter = 0;
@@ -59,16 +64,14 @@ namespace TicTakToeKata
                 row.Add(token);
                 counter++;
 
-                //var n = row.First().Value;
                 if (counter == _gridSize)
                 {
-                    if (row.All(x => x == row.First()))
+                    if (!string.IsNullOrWhiteSpace(row[0]) && row.All(x => x == row.First()))
                         return true;
                     row.Clear();
                     counter = 0;
                 }
             }
-
             return false;
         }
     }

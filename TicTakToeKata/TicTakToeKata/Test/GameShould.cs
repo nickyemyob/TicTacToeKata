@@ -208,8 +208,16 @@ namespace TicTakToeKata.Test
                 new List<string>
                 {
                     "o", "x", " ",
-                    " ", "o", "x",
-                    "x", "o", " "
+                    "x", "o", "x",
+                    "o", "o", " "
+                }
+            },
+            new object[] {
+                new List<string>
+                {
+                    "x", "x", " ",
+                    "o", "o", "x",
+                    " ", " ", " "
                 }
             }
         };
