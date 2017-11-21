@@ -28,7 +28,7 @@ namespace TicTakToeKata
 
             Console.WriteLine("player (o) at " + userInput);
 
-            game.AIsMove(board);
+            game.ComputerPlayersMove(board);
 
             Console.WriteLine("Computer (x) moves at ");
 

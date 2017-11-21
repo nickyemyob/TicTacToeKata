@@ -1,10 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TicTakToeKata
 {
     internal class Game
     {
+        private readonly int _gridSize;
+
+        public Game()
+        {
+            _gridSize = 3;
+        }
+
         public List<string> NewBoard()
         {
             var board = new List<string>
@@ -18,6 +26,17 @@ namespace TicTakToeKata
 
         }
 
+        public void UsersMove(List<string> board, int usersMove)
+        {
+            board[usersMove] = "o";
+        }
+
+        public void ComputerPlayersMove(List<string> board)
+        {
+            var aiMove = ComputerPlayer.Solve(board);
+            board[aiMove] = "x";
+        }
+
         public bool Input(string userInput)
         {
             return Int32.TryParse(userInput, out var _) &&
@@ -26,25 +45,31 @@ namespace TicTakToeKata
 
         public bool IsFinished(List<string> board)
         {
+            return board.All(token => !String.IsNullOrWhiteSpace(token));
+        }
+
+        public bool CheckWinCondition(List<string> board)
+        {
+            List<string> row = new List<string>();
+
+            var counter = 0;
+
             foreach (var token in board)
             {
-                if (String.IsNullOrWhiteSpace(token))
+                row.Add(token);
+                counter++;
+
+                //var n = row.First().Value;
+                if (counter == _gridSize)
                 {
-                    return false;
+                    if (row.All(x => x == row.First()))
+                        return true;
+                    row.Clear();
+                    counter = 0;
                 }
             }
-            return true;
-        }
 
-        public void UsersMove(List<string> board, int usersMove)
-        {
-            board[usersMove] = "o";
-        }
-
-        public void AIsMove(List<string> board)
-        {
-            var aiMove = ComputerPlayer.Solve(board);
-            board[aiMove] = "x";
+            return false;
         }
     }
 }

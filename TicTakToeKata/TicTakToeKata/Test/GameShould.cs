@@ -22,6 +22,54 @@ namespace TicTakToeKata.Test
             Assert.AreEqual(expectedBoard, actualBoard);
         }
 
+        [Test]
+        public void AllowUserToMakeAValidMove()
+        {
+            var game = new Game();
+            var board = new List<string>
+            {
+                " ", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var expectedBoard = new List<string>
+            {
+                "o", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var usersMove = 0;
+
+            game.UsersMove(board, usersMove);
+
+            Assert.AreEqual(expectedBoard, board);
+        }
+
+        [Test]
+        public void AllowComputerPlayerToMakeAValidMove()
+        {
+            var game = new Game();
+            var board = new List<string>
+            {
+                "o", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var expectedBoard = new List<string>
+            {
+                "o", "x", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            game.ComputerPlayersMove(board);
+
+            Assert.AreEqual(expectedBoard, board);
+        }
+
         private static readonly object[] IncorrectUserInputScenarios =
         {
             new object[] { "a" },
@@ -83,7 +131,7 @@ namespace TicTakToeKata.Test
         }
 
         [Test]
-        public void NotFinishWhenThereAreNoMoreMoves()
+        public void NotFinishWhenThereAreValidMoreMoves()
         {
             var game = new Game();
             var expectedBoard = new List<string>
@@ -98,52 +146,83 @@ namespace TicTakToeKata.Test
             Assert.False(gameIsFinished);
         }
 
+
+        private static readonly object[] WinningGameScenarios =
+        {
+            new object[] {
+                new List<string>
+                {
+                    "x", "x", "x",
+                    "o", "o", " ",
+                    " ", " ", " "
+                } 
+            },
+            new object[] {
+                new List<string>
+                {
+                    "o", "o", " ",
+                    "x", "x", "x",
+                    " ", " ", " "
+                }
+            },
+            new object[] {
+                new List<string>
+                {
+                    "o", "o", " ",
+                    " ", " ", " ",
+                    "x", "x", "x"
+                }
+            }
+        };
+
+        [TestCaseSource(nameof(WinningGameScenarios))]
         [Test]
-        public void UserMakesAValidMove()
+        public void DetermineWinnerIfWinConditionsAreMet(List<string> winningBoard)
         {
             var game = new Game();
-            var board = new List<string>
-            {
-                " ", " ", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
+            var isWinner = game.CheckWinCondition(winningBoard);
 
-            var expectedBoard = new List<string>
-            {
-                "o", " ", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
+            Assert.True(isWinner);
 
-            var usersMove = 0;
-
-            game.UsersMove(board, usersMove);
-
-            Assert.AreEqual(expectedBoard, board);
         }
 
+        private static readonly object[] UnfinishedGameScenarios =
+        {
+            new object[] {
+                new List<string>
+                {
+                    "x", "x", " ",
+                    "o", "o", " ",
+                    "x", " ", " "
+                }
+            },
+            new object[] {
+                new List<string>
+                {
+                    "o", "o", " ",
+                    "x", "x", " ",
+                    " ", "x", " "
+                }
+            },
+            new object[] {
+                new List<string>
+                {
+                    "o", "x", " ",
+                    " ", "o", "x",
+                    "x", "o", " "
+                }
+            }
+        };
+
+        [TestCaseSource(nameof(UnfinishedGameScenarios))]
         [Test]
-        public void AiMakesAValidMove()
+        public void NotDetermineWinnerIfWinConditionsAreNotMet(List<string> board)
         {
             var game = new Game();
-            var board = new List<string>
-            {
-                "o", " ", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
+            var isWinner = game.CheckWinCondition(board);
 
-            var expectedBoard = new List<string>
-            {
-                "o", "x", " ",
-                " ", " ", " ",
-                " ", " ", " "
-            };
+            Assert.False(isWinner);
 
-            game.AIsMove(board);
-
-            Assert.AreEqual(expectedBoard, board);
         }
 
     }
