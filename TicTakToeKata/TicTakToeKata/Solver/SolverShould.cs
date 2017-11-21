@@ -6,6 +6,7 @@ namespace TicTakToeKata.Solver
     [TestFixture]
     public class SolverShould
     {
+        [Test]
         public void AiDeterminesAValidMove()
         {
             var board = new List<string>
@@ -21,6 +22,7 @@ namespace TicTakToeKata.Solver
 
         }
 
+        [Test]
         public void UserMakesAValidMove()
         {
             var board = new List<string>
@@ -44,6 +46,7 @@ namespace TicTakToeKata.Solver
             Assert.AreEqual(expectedBoard, board);
         }
 
+        [Test]
         public void AiMakesAValidMove()
         {
             var board = new List<string>

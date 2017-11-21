@@ -65,7 +65,7 @@ namespace TicTakToeKata.Game
         }
 
         [Test]
-        public void KnowWhenGameHasFinished()
+        public void FinishTheGameWhenThereAreNoMoreMoves()
         {
             var expectedBoard = new List<string>
             {
@@ -80,7 +80,7 @@ namespace TicTakToeKata.Game
         }
 
         [Test]
-        public void KnowWhenGameHasNotFinished()
+        public void NotFinishTheGameWhenThereAreNoMoreMoves()
         {
             var expectedBoard = new List<string>
             {
