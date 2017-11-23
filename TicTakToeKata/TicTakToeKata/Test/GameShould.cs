@@ -70,6 +70,30 @@ namespace TicTakToeKata.Test
             Assert.AreEqual(expectedBoard, board);
         }
 
+        [Test]
+        public void NotLetPlayersOverwriteExistingMoves()
+        {
+            var board = new List<string>
+            {
+                "x", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            var game = new Game();
+
+            game.UsersMove(board,0);
+
+            var expectedBoard = new List<string>
+            {
+                "x", " ", " ",
+                " ", " ", " ",
+                " ", " ", " "
+            };
+
+            Assert.AreEqual(expectedBoard,board);
+        }
+
         private static readonly object[] IncorrectUserInputScenarios =
         {
             new object[] { "a" },
@@ -87,7 +111,7 @@ namespace TicTakToeKata.Test
         {
             var game = new Game();
             var userInput = input;
-            bool checkInput = game.Input(userInput);
+            bool checkInput = game.IsValidInput(userInput);
 
             Assert.False(checkInput);
             
@@ -108,7 +132,7 @@ namespace TicTakToeKata.Test
         {
             var game = new Game();
             var userInput = input;
-            bool checkInput = game.Input(userInput);
+            bool checkInput = game.IsValidInput(userInput);
 
             Assert.True(checkInput);
 

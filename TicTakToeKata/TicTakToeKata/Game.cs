@@ -22,16 +22,21 @@ namespace TicTakToeKata
 
         public void UsersMove(List<string> board, int usersMove)
         {
-            board[usersMove] = "o";
+            if (string.IsNullOrWhiteSpace(board[usersMove]))
+            {
+                board[usersMove] = "o";
+            }
         }
 
-        public void ComputerPlayersMove(List<string> board)
+        public int ComputerPlayersMove(List<string> board)
         {
             var aiMove = ComputerPlayer.Solve(board);
             board[aiMove] = "x";
+
+            return aiMove;
         }
 
-        public bool Input(string userInput)
+        public bool IsValidInput(string userInput)
         {
             return Int32.TryParse(userInput, out var _) &&
                    (Convert.ToInt32(userInput) < 9 && Convert.ToInt32(userInput) > -1);
