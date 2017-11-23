@@ -54,7 +54,7 @@ namespace TicTakToeKata
 
         public bool CheckWinCondition(List<string> board)
         {
-            return CheckHorizontalWinCondition(board) || CheckVerticalWinCondition(board) || CheckDiagonalWinCondition(board);
+            return CheckHorizontalWinCondition(board) || CheckVerticalWinCondition(board) || CheckDownwardDiagonalWinCondition(board) || CheckUpwardDiagonalWinCondition(board);
         }
 
         private bool CheckHorizontalWinCondition(List<string> board)
@@ -103,13 +103,36 @@ namespace TicTakToeKata
             return false;
         }
 
-        private bool CheckDiagonalWinCondition(List<string> board)
+        private bool CheckDownwardDiagonalWinCondition(List<string> board)
         {
             List<string> diagonalTokens = new List<string>();
 
             var counter = 0;
 
             for (int i = 0; i <= _gridHeight * _gridWidth; i += _gridWidth + 1)
+            {
+                diagonalTokens.Add(board[i]);
+                counter++;
+
+                if (counter == _gridHeight)
+                {
+                    if (!string.IsNullOrWhiteSpace(diagonalTokens[0]) && diagonalTokens.All(x => x == diagonalTokens.First()))
+                        return true;
+                    diagonalTokens.Clear();
+                    counter = 0;
+                }
+
+            }
+            return false;
+        }
+
+        private bool CheckUpwardDiagonalWinCondition(List<string> board)
+        {
+            List<string> diagonalTokens = new List<string>();
+
+            var counter = 0;
+
+            for (int i = _gridWidth - 1; i <= _gridHeight * _gridWidth; i += _gridWidth - 1)
             {
                 diagonalTokens.Add(board[i]);
                 counter++;
