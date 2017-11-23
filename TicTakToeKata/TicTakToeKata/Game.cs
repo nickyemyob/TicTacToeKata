@@ -6,11 +6,15 @@ namespace TicTakToeKata
 {
     internal class Game
     {
-        private readonly int _gridSize;
+        private readonly int _gridHeight;
+        private readonly int _gridWidth;
+        private int _gridSpaces;
 
         public Game()
         {
-            _gridSize = 3;
+            _gridHeight = 3;
+            _gridWidth = 3;
+
         }
 
         public List<string> NewBoard()
@@ -50,7 +54,7 @@ namespace TicTakToeKata
 
         public bool CheckWinCondition(List<string> board)
         {
-            return CheckHorizontalWinCondition(board);
+            return CheckHorizontalWinCondition(board) || CheckVerticalWinCondition(board);
         }
 
         private bool CheckHorizontalWinCondition(List<string> board)
@@ -64,13 +68,37 @@ namespace TicTakToeKata
                 row.Add(token);
                 counter++;
 
-                if (counter == _gridSize)
+                if (counter == _gridWidth)
                 {
                     if (!string.IsNullOrWhiteSpace(row[0]) && row.All(x => x == row.First()))
                         return true;
                     row.Clear();
                     counter = 0;
                 }
+            }
+            return false;
+        }
+
+
+        private bool CheckVerticalWinCondition(List<string> board)
+        {
+            List<string> Column = new List<string>();
+
+            var counter = 0;
+
+            for (int i = 0; i < _gridHeight * _gridWidth; i+=_gridWidth)
+            {
+                Column.Add(board[i]);
+                counter++;
+
+                if (counter == _gridHeight)
+                {
+                    if (!string.IsNullOrWhiteSpace(Column[0]) && Column.All(x => x == Column.First()))
+                        return true;
+                    Column.Clear();
+                    counter = 0;
+                }
+                
             }
             return false;
         }
