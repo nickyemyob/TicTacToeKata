@@ -9,6 +9,7 @@ namespace TicTakToeKata
             var game = new Game();
             var board = game.NewBoard();
             var checker = new Checker(3,3);
+            var moves = new Move();
 
             while (checker.CheckWinCondition(board) || !game.IsFinished(board))
             {
@@ -27,11 +28,11 @@ namespace TicTakToeKata
 
                 var userMove = Convert.ToInt32(userInput);
 
-                game.UsersMove(board, userMove);
+                moves.UsersMove(board, userMove);
 
                 Console.WriteLine("player (o) at " + userInput);
 
-                int computerMove = game.ComputerPlayersMove(board);
+                int computerMove = moves.ComputerPlayersMove(board);
 
                 Console.WriteLine("Computer (x) moves at " + computerMove);
 

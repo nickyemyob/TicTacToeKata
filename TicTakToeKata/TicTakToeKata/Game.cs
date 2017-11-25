@@ -6,7 +6,6 @@ namespace TicTakToeKata
 {
     internal class Game
     {
-
         public List<string> NewBoard()
         {
             var board = new List<string>
@@ -18,22 +17,6 @@ namespace TicTakToeKata
 
             return board;
 
-        }
-
-        public void UsersMove(List<string> board, int usersMove)
-        {
-            if (string.IsNullOrWhiteSpace(board[usersMove]))
-            {
-                board[usersMove] = "o";
-            }
-        }
-
-        public int ComputerPlayersMove(List<string> board)
-        {
-            var aiMove = ComputerPlayer.Solve(board);
-            board[aiMove] = "x";
-
-            return aiMove;
         }
 
         public bool IsValidInput(string userInput)
