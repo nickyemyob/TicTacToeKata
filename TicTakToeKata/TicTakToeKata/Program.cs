@@ -14,8 +14,23 @@ namespace TicTakToeKata
 
             var board = game.NewBoard();
 
-            while (checker.CheckWinCondition(board) || !game.IsFinished(board))
+            while (!game.IsFinished(board))
             {
+                if (checker.CheckWinCondition(board) || game.IsFinished(board))
+                {
+                    Console.WriteLine(Renderer.Render(board));
+                    break;
+                }
+                var computerMove = moves.ComputerPlayersMove(board);
+
+                Console.WriteLine("Computer (x) moves at " + computerMove);
+
+                if (checker.CheckWinCondition(board) || game.IsFinished(board))
+                {
+                    Console.WriteLine(Renderer.Render(board));
+                    break;
+                }
+
                 Console.WriteLine(Renderer.Render(board));
 
                 Console.WriteLine("To make a move, please enter a number from 0-8");
@@ -46,13 +61,12 @@ namespace TicTakToeKata
 
                 Console.WriteLine("player (o) at " + userInput);
 
-                var computerMove = moves.ComputerPlayersMove(board);
-
-                Console.WriteLine("Computer (x) moves at " + computerMove);
+                
             }
 
             Console.WriteLine("Winner!");
-            
+            Console.ReadLine();
+
         }
 
         private static void ValidInputPrompt(Game game, ref string userInput, ref bool validInput, List<string> board)
