@@ -42,6 +42,14 @@ namespace TicTakToeKata.Test
             new object[] {
                 new List<string>
                 {
+                    " ", "x", "o",
+                    " ", "x", "o",
+                    " ", "x", " "
+                }
+            },
+            new object[] {
+                new List<string>
+                {
                     "x", "o", "o",
                     " ", "x", " ",
                     " ", " ", "x"
@@ -56,6 +64,17 @@ namespace TicTakToeKata.Test
                 }
             }
         };
+
+        [TestCaseSource(nameof(WinningGameScenarios))]
+        [Test]
+        public void DetermineWinnerIfWinConditionsAreMet(List<string> winningBoard)
+        {
+            var checker = new Checker(3, 3);
+            var isWinner = checker.CheckWinCondition(winningBoard);
+
+            Assert.True(isWinner);
+
+        }
 
         private static readonly object[] UnfinishedGameScenarios =
         {
@@ -92,17 +111,6 @@ namespace TicTakToeKata.Test
                 }
             }
         };
-
-        [TestCaseSource(nameof(WinningGameScenarios))]
-        [Test]
-        public void DetermineWinnerIfWinConditionsAreMet(List<string> winningBoard)
-        {
-            var checker = new Checker(3, 3);
-            var isWinner = checker.CheckWinCondition(winningBoard);
-
-            Assert.True(isWinner);
-
-        }
 
         [TestCaseSource(nameof(UnfinishedGameScenarios))]
         [Test]

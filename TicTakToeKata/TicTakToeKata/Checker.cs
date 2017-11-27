@@ -47,19 +47,22 @@ namespace TicTakToeKata
         {
             List<string> column = new List<string>();
 
-            var counter = 0;
+            var gridHeight = 0;
+            var moveToNextVertical = 0;
 
             for (int i = 0; i < _gridArea; i+=_gridWidth)
             {
                 column.Add(board[i]);
-                counter++;
+                gridHeight++;
 
-                if (counter == _gridHeight)
+                if (gridHeight == _gridHeight)
                 {
                     if (!string.IsNullOrWhiteSpace(column[0]) && column.All(x => x == column.First()))
                         return true;
                     column.Clear();
-                    counter = 0;
+                    gridHeight = 0;
+                    moveToNextVertical++;
+                    i = moveToNextVertical - _gridWidth;
                 }
                 
             }
