@@ -10,6 +10,7 @@ namespace TicTakToeKata
             var board = game.NewBoard();
             var checker = new Checker(3,3);
             var moves = new Move();
+            var moveValidator = new MoveValidator();
 
             while (checker.CheckWinCondition(board) || !game.IsFinished(board))
             {
@@ -19,15 +20,31 @@ namespace TicTakToeKata
 
                 var userInput = Console.ReadLine();
 
-                while (!game.IsValidInput(userInput))
+                var validInput = game.IsValidInput(userInput);
+                int userMove;
+
+
+                while (!validInput)
                 {
-                    Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
-                    userInput = Console.ReadLine();
+                    while (!validInput)
+                    {
+                        Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
+                        userInput = Console.ReadLine();
+                        validInput = game.IsValidInput(userInput);
+                    }
 
+                    userMove = Convert.ToInt32(userInput);
+
+                    while (!moveValidator.IsValidMove(board, userMove))
+                    {
+                        Console.WriteLine("Sorry invalid move, please choose an empty space");
+                        userInput = Console.ReadLine();
+                        validInput = game.IsValidInput(userInput);
+                    }
                 }
+                
 
-                var userMove = Convert.ToInt32(userInput);
-
+                userMove = Convert.ToInt32(userInput);
                 moves.UsersMove(board, userMove);
 
                 Console.WriteLine("player (o) at " + userInput);

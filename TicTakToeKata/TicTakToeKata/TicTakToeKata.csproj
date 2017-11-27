@@ -48,6 +48,8 @@
     <Compile Include="Checker.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Move.cs" />
+    <Compile Include="MoveValidator.cs" />
+    <Compile Include="MoveValidatorShould.cs" />
     <Compile Include="Test\CheckerShould.cs" />
     <Compile Include="Test\GameShould.cs" />
     <Compile Include="Program.cs" />

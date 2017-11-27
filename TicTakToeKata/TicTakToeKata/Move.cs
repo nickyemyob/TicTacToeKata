@@ -6,10 +6,7 @@ namespace TicTakToeKata
     {
         public void UsersMove(List<string> board, int usersMove)
         {
-            if (string.IsNullOrWhiteSpace(board[usersMove]))
-            {
-                board[usersMove] = "o";
-            }
+            board[usersMove] = "o";
         }
 
         public int ComputerPlayersMove(List<string> board)
