@@ -20,12 +20,10 @@ namespace TicTakToeKata
 
                 var userInput = Console.ReadLine();
 
-                var validInput = game.IsValidInput(userInput);
                 int userMove;
 
+                var validInput = game.IsValidInput(userInput);
 
-                while (!validInput)
-                {
                     while (!validInput)
                     {
                         Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
@@ -33,18 +31,22 @@ namespace TicTakToeKata
                         validInput = game.IsValidInput(userInput);
                     }
 
+                userMove = Convert.ToInt32(userInput);
+
+                while (!moveValidator.IsValidMove(board, userMove))
+                {
+                    Console.WriteLine("Sorry invalid move, please choose an empty space");
+
+                    userInput = Console.ReadLine();
+                    validInput = game.IsValidInput(userInput);
+                    ValidInputPrompt(game, ref userInput, ref validInput);
+
                     userMove = Convert.ToInt32(userInput);
 
-                    while (!moveValidator.IsValidMove(board, userMove))
-                    {
-                        Console.WriteLine("Sorry invalid move, please choose an empty space");
-                        userInput = Console.ReadLine();
-                        validInput = game.IsValidInput(userInput);
-                    }
                 }
-                
 
                 userMove = Convert.ToInt32(userInput);
+
                 moves.UsersMove(board, userMove);
 
                 Console.WriteLine("player (o) at " + userInput);
@@ -57,6 +59,16 @@ namespace TicTakToeKata
 
             Console.ReadLine();
             
+        }
+
+        private static void ValidInputPrompt(Game game, ref string userInput, ref bool validInput)
+        {
+            while (!validInput)
+            {
+                Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
+                userInput = Console.ReadLine();
+                validInput = game.IsValidInput(userInput);
+            }
         }
     }
 }
