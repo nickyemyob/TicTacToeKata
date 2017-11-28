@@ -47,9 +47,13 @@
   <ItemGroup>
     <Compile Include="Checker.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="HumanPlayer.cs" />
+    <Compile Include="HumanPlayerShould.cs" />
+    <Compile Include="IPlayer.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="MoveValidator.cs" />
     <Compile Include="MoveValidatorShould.cs" />
+    <Compile Include="Solver.cs" />
     <Compile Include="Test\CheckerShould.cs" />
     <Compile Include="Test\GameShould.cs" />
     <Compile Include="Program.cs" />
@@ -58,7 +62,7 @@
     <Compile Include="Test\MoveShould.cs" />
     <Compile Include="Test\RendererShould.cs" />
     <Compile Include="ComputerPlayer.cs" />
-    <Compile Include="Test\ComputerPlayerShould.cs" />
+    <Compile Include="Test\SolverShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -9,12 +9,5 @@ namespace TicTakToeKata
             board[usersMove] = "o";
         }
 
-        public int ComputerPlayersMove(List<string> board)
-        {
-            var aiMove = ComputerPlayer.Solve(board);
-            board[aiMove] = "x";
-
-            return aiMove;
-        }
     }
 }
