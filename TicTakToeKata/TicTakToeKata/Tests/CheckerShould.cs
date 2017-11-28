@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TicTakToeKata.Test
+namespace TicTakToeKata.Tests
 {
     public class CheckerShould
     {

@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
+using TicTakToeKata.Interfaces;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Players
 {
-    public class HumanPlayer : IPlayer
+    internal class ComputerPlayer : IPlayer
     {
+
         public int Move(List<string> board, int position)
         {
-            board[position] = "o";
+            board[position] = "x";
             return position;
         }
     }

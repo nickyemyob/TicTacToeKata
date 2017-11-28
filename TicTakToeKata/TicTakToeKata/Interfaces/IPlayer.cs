@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Interfaces
 {
     internal interface IPlayer
     {

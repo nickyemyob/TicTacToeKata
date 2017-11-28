@@ -47,26 +47,25 @@
   <ItemGroup>
     <Compile Include="Checker.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="HumanPlayer.cs" />
-    <Compile Include="HumanPlayerShould.cs" />
-    <Compile Include="IPlayer.cs" />
-    <Compile Include="Move.cs" />
-    <Compile Include="MoveValidator.cs" />
-    <Compile Include="MoveValidatorShould.cs" />
+    <Compile Include="Players\HumanPlayer.cs" />
+    <Compile Include="Tests\HumanPlayerShould.cs" />
+    <Compile Include="Interfaces\IPlayer.cs" />
+    <Compile Include="Validators\MoveValidator.cs" />
+    <Compile Include="Tests\MoveValidatorShould.cs" />
     <Compile Include="Solver.cs" />
-    <Compile Include="Test\CheckerShould.cs" />
-    <Compile Include="Test\GameShould.cs" />
+    <Compile Include="Tests\CheckerShould.cs" />
+    <Compile Include="Tests\GameShould.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
-    <Compile Include="Test\MoveShould.cs" />
-    <Compile Include="Test\RendererShould.cs" />
-    <Compile Include="ComputerPlayer.cs" />
-    <Compile Include="Test\SolverShould.cs" />
+    <Compile Include="Tests\RendererShould.cs" />
+    <Compile Include="Players\ComputerPlayer.cs" />
+    <Compile Include="Tests\SolverShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

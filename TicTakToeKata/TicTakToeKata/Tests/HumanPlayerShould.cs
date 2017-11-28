@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
+using TicTakToeKata.Players;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Tests
 {
     [TestFixture]
     public class HumanPlayerShould
