@@ -45,19 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checker.cs" />
-    <Compile Include="Game.cs" />
+    <Compile Include="Rules\Checker.cs" />
+    <Compile Include="Rules\Game.cs" />
     <Compile Include="Players\HumanPlayer.cs" />
     <Compile Include="Tests\HumanPlayerShould.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Validators\MoveValidator.cs" />
     <Compile Include="Tests\MoveValidatorShould.cs" />
-    <Compile Include="Solver.cs" />
+    <Compile Include="Players\Solver.cs" />
     <Compile Include="Tests\CheckerShould.cs" />
     <Compile Include="Tests\GameShould.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderer.cs" />
+    <Compile Include="GUI\Renderer.cs" />
     <Compile Include="Tests\RendererShould.cs" />
     <Compile Include="Players\ComputerPlayer.cs" />
     <Compile Include="Tests\SolverShould.cs" />

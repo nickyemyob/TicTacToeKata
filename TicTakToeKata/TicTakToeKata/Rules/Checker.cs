@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace TicTakToeKata
+namespace TicTakToeKata.Rules
 {
     internal class Checker
     {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using TicTakToeKata.GUI;
 using TicTakToeKata.Players;
+using TicTakToeKata.Rules;
 using TicTakToeKata.Validators;
 
 namespace TicTakToeKata
@@ -19,6 +21,7 @@ namespace TicTakToeKata
                 var humanPlayer = new HumanPlayer();
                 var moveValidator = new MoveValidator();
                 var solver = new Solver();
+                var renderer = new Renderer();
                 
 
                 var board = game.NewBoard();
@@ -27,7 +30,7 @@ namespace TicTakToeKata
                 {
                     if (checker.CheckWinCondition(board) || game.IsFinished(board))
                     {
-                        Console.WriteLine(Renderer.Render(board));
+                        Console.WriteLine(renderer.Render(board));
                         break;
                     }
 
@@ -38,11 +41,11 @@ namespace TicTakToeKata
 
                     if (checker.CheckWinCondition(board) || game.IsFinished(board))
                     {
-                        Console.WriteLine(Renderer.Render(board));
+                        Console.WriteLine(renderer.Render(board));
                         break;
                     }
 
-                    Console.WriteLine(Renderer.Render(board));
+                    Console.WriteLine(renderer.Render(board));
 
                     Console.WriteLine("To make a move, please enter a number from 0-8");
 
@@ -50,18 +53,18 @@ namespace TicTakToeKata
 
                     var validInput = game.IsValidInput(userInput);
 
-                    ValidInputPrompt(game, ref userInput, ref validInput, board);
+                    ValidInputPrompt(game, ref userInput, ref validInput, board, renderer);
 
                     var userMove = Convert.ToInt32(userInput);
 
                     while (!moveValidator.IsValidMove(board, userMove))
                     {
                         Console.WriteLine("Sorry invalid move, please choose an empty space");
-                        Console.WriteLine(Renderer.Render(board));
+                        Console.WriteLine(renderer.Render(board));
 
                         userInput = Console.ReadLine();
                         validInput = game.IsValidInput(userInput);
-                        ValidInputPrompt(game, ref userInput, ref validInput, board);
+                        ValidInputPrompt(game, ref userInput, ref validInput, board, renderer);
 
                         userMove = Convert.ToInt32(userInput);
                     }
@@ -94,12 +97,12 @@ namespace TicTakToeKata
 
         }
 
-        private static void ValidInputPrompt(Game game, ref string userInput, ref bool validInput, List<string> board)
+        private static void ValidInputPrompt(Game game, ref string userInput, ref bool validInput, List<string> board, Renderer renderer)
         {
             while (!validInput)
             {
                 Console.WriteLine("Sorry invalid input, please enter a number from 0-8");
-                Console.WriteLine(Renderer.Render(board));
+                Console.WriteLine(renderer.Render(board));
 
                 userInput = Console.ReadLine();
                 validInput = game.IsValidInput(userInput);
