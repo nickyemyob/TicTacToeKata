@@ -15,7 +15,7 @@ namespace TicTakToeKata
 
             while (isNewGame)
             {
-                var game = new Game();
+                var game = new Game(3,3);
                 var checker = new Checker(3, 3);
                 var computerPlayer = new ComputerPlayer();
                 var humanPlayer = new HumanPlayer();
