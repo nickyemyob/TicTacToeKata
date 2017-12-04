@@ -70,7 +70,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void DetermineWinnerIfWinConditionsAreMet(List<string> winningBoard)
         {
-            var checker = new Checker(3, 3);
+            var checker = new WinChecker(3, 3);
             var isWinner = checker.CheckWinCondition(winningBoard);
 
             Assert.True(isWinner);
@@ -117,7 +117,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void NotDetermineWinnerIfWinConditionsAreNotMet(List<string> board)
         {
-            var checker = new Checker(3, 3);
+            var checker = new WinChecker(3, 3);
             var isWinner = checker.CheckWinCondition(board);
 
             Assert.False(isWinner);

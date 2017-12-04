@@ -4,12 +4,12 @@ using System.Linq;
 
 namespace TicTakToeKata.Rules
 {
-    public class Game
+    public class GameSetup
     {
         private readonly int _gridArea;
 
 
-        public Game(int gridHeight, int gridWidth)
+        public GameSetup(int gridHeight, int gridWidth)
         {
             _gridArea = gridHeight * gridWidth;
 

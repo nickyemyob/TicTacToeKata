@@ -5,7 +5,7 @@ using TicTakToeKata.Validators;
 namespace TicTakToeKata.Tests
 {
     [TestFixture]
-    public class MoveValidatorShould
+    public class PlayerMoveValidatorShould
     {
         [Test]
         public void ReturnTrueIfTheCurrentMoveHasAlreadyBeenPlayed()
@@ -19,7 +19,7 @@ namespace TicTakToeKata.Tests
                 " ", " ", " "
             };
 
-            var validator = new MoveValidator();
+            var validator = new PlayerMoveValidator();
 
             bool actualValidatorResult = validator.IsValidMove(board, 0);
 
@@ -37,7 +37,7 @@ namespace TicTakToeKata.Tests
                 " ", " ", " "
             };
 
-            var validator = new MoveValidator();
+            var validator = new PlayerMoveValidator();
 
             bool actualValidatorResult = validator.IsValidMove(board, 0);
 

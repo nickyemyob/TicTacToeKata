@@ -15,11 +15,11 @@ namespace TicTakToeKata
 
             while (isNewGame)
             {
-                var game = new Game(3,3);
-                var checker = new Checker(3, 3);
+                var game = new GameSetup(3,3);
+                var checker = new WinChecker(3, 3);
                 var computerPlayer = new ComputerPlayer("x");
                 var humanPlayer = new HumanPlayer("o");
-                var moveValidator = new MoveValidator();
+                var moveValidator = new PlayerMoveValidator();
                 //var solver = new Solver();
                 var renderer = new Renderer();
                 
@@ -97,7 +97,7 @@ namespace TicTakToeKata
 
         }
 
-        private static void ValidInputPrompt(Game game, ref string userInput, ref bool validInput, List<string> board, Renderer renderer)
+        private static void ValidInputPrompt(GameSetup gameSetup, ref string userInput, ref bool validInput, List<string> board, Renderer renderer)
         {
             while (!validInput)
             {
@@ -105,7 +105,7 @@ namespace TicTakToeKata
                 Console.WriteLine(renderer.Render(board));
 
                 userInput = Console.ReadLine();
-                validInput = game.IsValidInput(userInput);
+                validInput = gameSetup.IsValidInput(userInput);
             }
         }
     }

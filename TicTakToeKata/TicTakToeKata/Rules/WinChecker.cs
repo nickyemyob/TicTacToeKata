@@ -3,13 +3,13 @@ using System.Linq;
 
 namespace TicTakToeKata.Rules
 {
-    internal class Checker
+    public class WinChecker
     {
         private readonly int _gridHeight;
         private readonly int _gridWidth;
         private readonly int _gridArea;
 
-        public Checker(int gridHeight, int gridWidth)
+        public WinChecker(int gridHeight, int gridWidth)
         {
             _gridHeight = gridHeight;
             _gridWidth = gridWidth;

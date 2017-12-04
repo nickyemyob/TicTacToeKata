@@ -2,7 +2,7 @@
 
 namespace TicTakToeKata.Validators
 {
-    public class MoveValidator
+    public class PlayerMoveValidator
     {
         public bool IsValidMove(List<string> board, int move)
         {

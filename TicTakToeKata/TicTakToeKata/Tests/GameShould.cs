@@ -17,7 +17,7 @@ namespace TicTakToeKata.Tests
                 " ", " ", " "
             };
 
-            var game = new Game(3,3);
+            var game = new GameSetup(3,3);
             var actualBoard = game.NewBoard();
 
             Assert.AreEqual(expectedBoard, actualBoard);
@@ -38,7 +38,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void InformTheUserOfInvalidInput(string input)
         {
-            var game = new Game(3, 3);
+            var game = new GameSetup(3, 3);
             var userInput = input;
             bool checkInput = game.IsValidInput(userInput);
 
@@ -59,7 +59,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void AccecptsUserInputIfValid(string input)
         {
-            var game = new Game(3, 3);
+            var game = new GameSetup(3, 3);
             var userInput = input;
             bool checkInput = game.IsValidInput(userInput);
 
@@ -70,7 +70,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void FinishWhenThereAreNoMoreMoves()
         {
-            var game = new Game(3, 3);
+            var game = new GameSetup(3, 3);
             var expectedBoard = new List<string>
             {
                 "x", "o", "x",
@@ -86,7 +86,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void NotFinishWhenThereAreValidMoreMoves()
         {
-            var game = new Game(3, 3);
+            var game = new GameSetup(3, 3);
             var expectedBoard = new List<string>
             {
                 "x", "o", "x",
@@ -102,7 +102,7 @@ namespace TicTakToeKata.Tests
         [Test]
         public void SetupSizeOfBoard()
         {
-            var game = new Game(3,3);
+            var game = new GameSetup(3,3);
             var expectedSize = 9;
 
             var board = game.NewBoard();
