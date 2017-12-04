@@ -17,11 +17,11 @@ namespace TicTakToeKata.Tests
                 " ", " ", " "
             };
 
-            var computerPlayer = new ComputerPlayer();
+            var computerPlayer = new ComputerPlayer("x");
             var solver = new Solver();
             var solve = solver.Solve(board);
 
-            var result = computerPlayer.Move(board,solve);
+            var result = computerPlayer.Move(board);
 
             Assert.AreEqual(1, result);
 

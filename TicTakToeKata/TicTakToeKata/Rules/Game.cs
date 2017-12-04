@@ -6,15 +6,11 @@ namespace TicTakToeKata.Rules
 {
     public class Game
     {
-        private readonly int _gridHeight;
-        private readonly int _gridWidth;
         private readonly int _gridArea;
 
 
         public Game(int gridHeight, int gridWidth)
         {
-            _gridHeight = gridHeight;
-            _gridWidth = gridWidth;
             _gridArea = gridHeight * gridWidth;
 
         }

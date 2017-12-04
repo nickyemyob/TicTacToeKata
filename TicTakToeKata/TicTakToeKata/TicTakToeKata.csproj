@@ -48,6 +48,7 @@
     <Compile Include="Rules\Checker.cs" />
     <Compile Include="Rules\Game.cs" />
     <Compile Include="Players\HumanPlayer.cs" />
+    <Compile Include="Tests\ComputerPlayerShould.cs" />
     <Compile Include="Tests\HumanPlayerShould.cs" />
     <Compile Include="Interfaces\IPlayer.cs" />
     <Compile Include="Validators\MoveValidator.cs" />

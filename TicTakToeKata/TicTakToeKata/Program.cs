@@ -17,10 +17,10 @@ namespace TicTakToeKata
             {
                 var game = new Game(3,3);
                 var checker = new Checker(3, 3);
-                var computerPlayer = new ComputerPlayer();
-                var humanPlayer = new HumanPlayer();
+                var computerPlayer = new ComputerPlayer("x");
+                var humanPlayer = new HumanPlayer("o");
                 var moveValidator = new MoveValidator();
-                var solver = new Solver();
+                //var solver = new Solver();
                 var renderer = new Renderer();
                 
 
@@ -34,8 +34,8 @@ namespace TicTakToeKata
                         break;
                     }
 
-                    var solve = solver.Solve(board);
-                    var computerMove = computerPlayer.Move(board, solve);
+                    //var solve = solver.Solve(board);
+                    var computerMove = computerPlayer.Move(board);
 
                     Console.WriteLine("Computer (x) moves at " + computerMove);
 
@@ -71,7 +71,7 @@ namespace TicTakToeKata
 
                     userMove = Convert.ToInt32(userInput);
 
-                    humanPlayer.Move(board, userMove);
+                    humanPlayer.Move(board);
 
                     Console.WriteLine("player (o) at " + userInput);
 

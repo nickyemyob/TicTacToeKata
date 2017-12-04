@@ -27,11 +27,11 @@ namespace TicTakToeKata.Tests
 
             var usersMove = 0;
 
-            var humanPlayer = new HumanPlayer();
-            var actualPosition = humanPlayer.Move(board, usersMove);
+            var humanPlayer = new HumanPlayer("o");
+            var actualMove = humanPlayer.Move(board);
 
             Assert.AreEqual(expectedBoard, board);
-            Assert.AreEqual(usersMove, actualPosition);
+            Assert.AreEqual(usersMove, actualMove);
         }
 
     }

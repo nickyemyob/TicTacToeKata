@@ -1,14 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TicTakToeKata.Interfaces;
 
 namespace TicTakToeKata.Players
 {
     public class HumanPlayer : IPlayer
     {
-        public int Move(List<string> board, int position)
+        public string Token { get; }
+
+        public HumanPlayer(string token)
         {
-            board[position] = "o";
+            Token = token;
+
+        }
+
+        public int Move(List<string> board)
+        {
+            var position = Solve(board);
+            board[position] = Token;
             return position;
+        }
+
+        public int Solve(List<string> board)
+        {
+            return 0;
         }
     }
 }

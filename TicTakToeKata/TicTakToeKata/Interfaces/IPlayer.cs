@@ -4,6 +4,8 @@ namespace TicTakToeKata.Interfaces
 {
     internal interface IPlayer
     {
-        int Move(List<string> board, int position);
+        int Move(List<string> board);
+
+        int Solve(List<string> board);
     }
 }
