@@ -23,7 +23,11 @@ namespace TicTakToeKata.Players
 
         public int Solve(List<string> board)
         {
-            return 0;
+            var input = Console.ReadLine();
+
+            //put string into validator
+            var check = int.TryParse(input, out var answer);
+            return answer;
         }
     }
 }

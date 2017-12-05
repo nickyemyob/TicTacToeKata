@@ -1,4 +1,5 @@
 ﻿using System;
+using TicTakToeKata.Interfaces;
 
 namespace TicTakToeKata.Validators
 {
@@ -9,5 +10,12 @@ namespace TicTakToeKata.Validators
             return position >= 0 && position <= 8;
 
         }
+
+        public bool GetReleventInGameInput(string input)
+        {
+            var check = int.TryParse(input, out var answer);
+            return check;
+        }
+
     }
 }
