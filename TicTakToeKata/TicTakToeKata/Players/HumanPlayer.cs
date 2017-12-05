@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TicTakToeKata.Interfaces;
+using TicTakToeKata.Validators;
 
 namespace TicTakToeKata.Players
 {
@@ -23,11 +24,11 @@ namespace TicTakToeKata.Players
 
         public int Solve(List<string> board)
         {
-            var input = Console.ReadLine();
+            var playerInputValidator = new PlayerInputValidator();
 
-            //put string into validator
-            var check = int.TryParse(input, out var answer);
-            return answer;
+            var input = playerInputValidator.GetValidInput();
+
+            return input;
         }
     }
 }

@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="InputReader.cs" />
     <Compile Include="Interfaces\IInputReader.cs" />
+    <Compile Include="Rules\BoardConfig.cs" />
+    <Compile Include="Tests\InputReaderShould.cs" />
     <Compile Include="Validators\PlayerInputValidator.cs" />
     <Compile Include="Tests\PlayerInputValidatorShould.cs" />
     <Compile Include="Rules\WinChecker.cs" />

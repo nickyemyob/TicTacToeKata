@@ -9,6 +9,7 @@ namespace TicTakToeKata.Tests
     {
 
         [Test]
+        [Ignore("Requires input for solver")]
         public void AllowUserToMakeAMoveOnTheBoard()
         {
             var board = new List<string>

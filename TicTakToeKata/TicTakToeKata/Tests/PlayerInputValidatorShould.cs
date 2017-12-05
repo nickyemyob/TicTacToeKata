@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
+using NUnit.Framework.Internal;
+using TicTakToeKata.Interfaces;
 using TicTakToeKata.Validators;
 
 namespace TicTakToeKata.Tests
@@ -38,7 +41,7 @@ namespace TicTakToeKata.Tests
         {
             var checker = new PlayerInputValidator();
 
-            var isIrreleventInGameInput = checker.GetReleventInGameInput(input);
+            var isIrreleventInGameInput = checker.IsValidInGameInput(input);
 
             Assert.False(isIrreleventInGameInput);
         }
@@ -56,10 +59,26 @@ namespace TicTakToeKata.Tests
         {
             var checker = new PlayerInputValidator();
 
-            var isIrreleventInGameInput = checker.GetReleventInGameInput(input);
+            var isIrreleventInGameInput = checker.IsValidInGameInput(input);
 
             Assert.True(isIrreleventInGameInput);
         }
+
+//        [Test]
+//        public void ReturnValidInput()
+//        {
+//            var checker = new PlayerInputValidator();
+//
+//            Mock<IInputReader> inputReaderMock = new Mock<IInputReader>();
+//
+//
+//            inputReaderMock.Setup(e => e.UserInput()).Returns("0");
+//
+//            var answer = checker.GetValidInput();
+//
+//            Assert.AreEqual(0, answer);
+//
+//        }
 
 
     }
