@@ -9,9 +9,9 @@ namespace TicTakToeKata.Rules
         private readonly int _gridArea;
 
 
-        public GameSetup(int gridHeight, int gridWidth)
+        public GameSetup()
         {
-            _gridArea = gridHeight * gridWidth;
+            _gridArea = (int) BoardConfig.Area;
 
         }
 

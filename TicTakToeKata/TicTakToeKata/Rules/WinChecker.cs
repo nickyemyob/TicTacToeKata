@@ -9,11 +9,11 @@ namespace TicTakToeKata.Rules
         private readonly int _gridWidth;
         private readonly int _gridArea;
 
-        public WinChecker(int gridHeight, int gridWidth)
+        public WinChecker()
         {
-            _gridHeight = gridHeight;
-            _gridWidth = gridWidth;
-            _gridArea = gridHeight * gridWidth;
+            _gridHeight = (int) BoardConfig.Height;
+            _gridWidth = (int) BoardConfig.Width;
+            _gridArea = (int) BoardConfig.Area;
         }
 
         public bool CheckWinCondition(List<string> board)

@@ -68,7 +68,7 @@
     <Compile Include="Tests\PlayerMoveValidatorShould.cs" />
     <Compile Include="Players\Solver.cs" />
     <Compile Include="Tests\CheckerShould.cs" />
-    <Compile Include="Tests\GameShould.cs" />
+    <Compile Include="Tests\GameSetupShould.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Renderer.cs" />
